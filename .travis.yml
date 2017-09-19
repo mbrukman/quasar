@@ -12,7 +12,7 @@ services:
 before_install:
   - sudo /etc/init.d/postgresql stop
   - sudo /etc/init.d/mysql stop
-  - sudo /etc/init.d/memcache stop
+  - sudo service memcached stop
   - ps auxw
 
 # create all the docker containers we need for IT testing per matrix build
