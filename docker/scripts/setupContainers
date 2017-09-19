@@ -20,9 +20,10 @@ init_metastore() {
   # a restart of the container is needed here due to
   # http://askubuntu.com/questions/308054/how-to-create-s-pgsql-5432
   echo "configuring metastore..."
-  docker restart quasar_metastore
+  #docker restart quasar_metastore
   docker cp $SCRIPTS_DIR/initPostgresql quasar_metastore:/tmp/initPostgresql
   docker exec quasar_metastore /tmp/initPostgresql metastore
+  docker restart quasar_metastore
 }
 
 init_couchbase() {
