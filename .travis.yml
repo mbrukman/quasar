@@ -11,6 +11,7 @@ services:
 # needed by the  postgreql container
 before_install:
   - sudo /etc/init.d/postgresql stop
+  - ps auxw
 
 # create all the docker containers we need for IT testing per matrix build
 install:
